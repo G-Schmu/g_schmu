@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, h1, h2, h3, h4, h5, h6, p, menu, ul, li, img {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #606066;
+}
+body {
+	background-image: url(imgs/Background-2.png);
+	background-repeat:repeat;
+	overflow-y: scroll;
+}
+a {
+	text-decoration: none;
+	color: #2088B8;
+}
+h2, h3 {
+	margin-top: 15px;
+}
+
+.full-container {
+	width: 1520px; 
+	margin: 0px auto;
+}
+.left-container {
+	float: left;
+	margin-top: 40px;
+}
+.center-container {
+	width: 1000px;
+	min-height: 100vh;
+	margin: 0px auto;
+	padding: 30px;
+	box-sizing: border-box;
+	box-shadow: #F2F4F4 0px 0px 50px;
+	background-color: #F2F4F4;
+}
+
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-5%);
+		opacity: 0;
+	}
+	20% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+@keyframes slideInFromBottomContainer {
+	0% {
+		transform: translateY(200%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+@keyframes slideInFromBottomCircle {
+	0% {
+		transform: translateY(20%);
+	}
+	50% {
+		transform: translateY(15%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+menu {
+	float: right;
+	animation: 0.4s ease-out 0s 1 slideInFromLeft;
+}
+menu ul {
+	list-style: none;
+}
+menu li {
+	height: 25px;
+	width: 230px;
+	margin: 10px 0px;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.10);
+	transition: box-shadow 0.2s ease-in-out;
+}
+menu li:hover {
+	box-shadow: 0 2px 7px rgba(0,0,0,0.3);
+	color: #2088B8;
+}
+menu h2 {
+	font-size: 20px;
+	margin-top: 2px;
+	padding: 0px;
+	color: #606066;
+	transition: color 0.2s;
+}
+menu h2:hover {
+	color: #2088B8;
+}
+menu img {
+	height: 22px;
+	margin-right: 8px;
+	float: left;
+}
+.current-page {
+	background-color: #606066;
+	border: 1px solid #f0f0f0;
+}
+.current-page h2 {
+	color: #f0f0f0;
+}
+	
+
+.banner {
+	background-position: center;
+	height: 200px;
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
+}
+.banner h1 {
+	font-size: 40px;
+	margin-right: 50px;
+	text-align:right;
+	line-height: 200px;
+	color: #FFFFFF;
+	text-shadow: rgba(0,0,0,0.4) 0px 0px 8px;
+}
+
+h1 img {
+	height: 28px;
+	margin-top: 3px;
+	margin-right: 8px;
+}
+
+.circle-container {
+	animation: 0.8s ease-out 0s 1 slideInFromBottomContainer;
+}
+#main-circle-grid  {
+	width: 100%;
+	list-style: none;
+}
+#main-circle-grid li {
+	display: inline-block;
+}
+.main-circle {
+	animation: 0.8s ease-out 0s 1 slideInFromBottomCircle;
+	background-color: #606066;
+	width: 180px;
+	height: 180px;
+	border-radius: 100%;
+	margin: 20px;
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
+	transition: border-radius 0.6s, box-shadow 0.2s;
+}
+.main-circle:hover {
+	border-radius: 0%;
+	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+}
+.main-circle2 {
+	animation: 0.8s ease-out 0.2s 1 slideInFromBottomCircle;
+	background-color: #7B7676;
+}
+.main-circle3 {
+	animation: 0.8s ease-out 0.3s 1 slideInFromBottomCircle;
+	background-color: #2088B8;
+}
+.main-circle img {
+	float: left;
+	height: 180px;
+	width: 180px;
+	border-radius: 100%;
+	transition: border-radius 0.6s;
+}
+.main-circle img:hover {
+	border-radius: 0%;
+}
+.main-circle h3 {
+	float: left;
+	text-align: center;
+	vertical-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+.main-circle-blank {
+	width: 220px;
+	height: 220px;
+}
