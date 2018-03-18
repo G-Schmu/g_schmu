@@ -20,6 +20,13 @@ a {
 h2, h3 {
 	margin-top: 15px;
 }
+p {
+	margin: 5px 0px 15px;
+	font-size: 0.9em;
+	line-height: 1.3em;
+	width: 400px;
+	margin-left: 220px;
+}
 
 .full-container {
 	width: 1520px; 
@@ -35,7 +42,7 @@ h2, h3 {
 	margin: 0px auto;
 	padding: 30px;
 	box-sizing: border-box;
-	box-shadow: #F2F4F4 0px 0px 50px;
+	box-shadow: #F2F4F4 0px 0px 20px;
 	background-color: #F2F4F4;
 }
 
@@ -66,7 +73,10 @@ h2, h3 {
 	0% {
 		transform: translateY(20%);
 	}
-	50% {
+	20% {
+		transform: translateY(20%);
+	}
+	60% {
 		transform: translateY(15%);
 	}
 	100% {
@@ -74,6 +84,7 @@ h2, h3 {
 	}
 }
 
+/* Menu Styles */
 menu {
 	float: right;
 	animation: 0.4s ease-out 0s 1 slideInFromLeft;
@@ -117,7 +128,7 @@ menu img {
 	color: #f0f0f0;
 }
 	
-
+/* Banner Styles*/
 .banner {
 	background-position: center;
 	height: 200px;
@@ -131,25 +142,25 @@ menu img {
 	color: #FFFFFF;
 	text-shadow: rgba(0,0,0,0.4) 0px 0px 8px;
 }
-
 h1 img {
 	height: 28px;
 	margin-top: 3px;
 	margin-right: 8px;
 }
 
+/* CSS for the circle templates used across the site */
 .circle-container {
 	animation: 0.8s ease-out 0s 1 slideInFromBottomContainer;
 }
 #main-circle-grid  {
-	width: 100%;
+	width: 900px;
 	list-style: none;
 }
 #main-circle-grid li {
 	display: inline-block;
 }
 .main-circle {
-	animation: 0.8s ease-out 0s 1 slideInFromBottomCircle;
+	animation: 0.7s ease-out 0s 1 slideInFromBottomCircle;
 	background-color: #606066;
 	width: 180px;
 	height: 180px;
@@ -163,11 +174,11 @@ h1 img {
 	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
 }
 .main-circle2 {
-	animation: 0.8s ease-out 0.2s 1 slideInFromBottomCircle;
+	animation: 0.7s ease-out 0.1s 1 slideInFromBottomCircle;
 	background-color: #7B7676;
 }
 .main-circle3 {
-	animation: 0.8s ease-out 0.3s 1 slideInFromBottomCircle;
+	animation: 0.8s ease-out 0.1s 1 slideInFromBottomCircle;
 	background-color: #2088B8;
 }
 .main-circle img {
@@ -190,4 +201,22 @@ h1 img {
 .main-circle-blank {
 	width: 220px;
 	height: 220px;
+}
+
+/* Adaptation of the circle templates to form a simple gallery */
+.gallery {
+	animation: 0.8s ease-out 0s 1 slideInFromBottomContainer;
+	clear:both;
+}
+.gallery-pic {
+	background-color: #606066;
+	float: left;
+	width: 180px;
+	height: 180px;
+	margin: 20px;
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
+	transition: box-shadow 0.2s;
+}
+.gallery-pic:hover {
+	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
 }
