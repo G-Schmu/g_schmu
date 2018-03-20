@@ -20,6 +20,12 @@ a {
 h2, h3 {
 	margin-top: 15px;
 }
+h2 {
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.2em;
+}
 p {
 	margin: 5px 0px 15px;
 	font-size: 0.9em;
