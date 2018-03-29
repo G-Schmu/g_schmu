@@ -6,19 +6,33 @@ body, h1, h2, h3, h4, h5, h6, p, menu, ul, li, img {
 	padding: 0px;
 	border: 0px;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #606066;
+	color: #ffffff;
 }
 body {
 	background-image: url(imgs/Background-2.png);
 	background-repeat:repeat;
 	overflow-y: scroll;
 }
+section {
+	padding: 10px 0px;
+}
+
+.bkgcolordg {
+	background-color: #606066;
+}
+.bkgcolorlg {
+	background-color: #7B7676;
+}
+.bkgcolorblue {
+	background-color: #2088B8;
+}
+
 a {
 	text-decoration: none;
 	color: #2088B8;
 }
-h2, h3 {
-	margin-top: 15px;
+h1 {
+	padding-top: 25px;
 }
 h2 {
 	font-size: 1.5em;
@@ -30,79 +44,54 @@ p {
 	margin: 5px 0px 15px;
 	font-size: 0.9em;
 	line-height: 1.3em;
-	width: 400px;
-	margin-left: 220px;
 }
 @media only screen and (max-width:750px){
 	p {
 		width: 100%;
 		margin: 5px 0px;
 	}
+	p, h1, h2, h3 {
+		padding-left: 10px;
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
 }
 
 .full-container {
-	width: 1520px; 
+	width: 100%; 
 	margin: 0px auto;
-}
-.left-container {
-	float: left;
-	margin-top: 40px;
 }
 .center-container {
 	width: 1000px;
-	min-height: 100vh;
 	margin: 0px auto;
-	padding: 30px;
-	box-sizing: border-box;
-	box-shadow: #F2F4F4 0px 0px 20px;
-	background-color: #F2F4F4;
+	padding: 30px 0px;
 }
 @media screen and (max-width:750px){
 	.full-container { 
 		width: 100%;
 		margin: 0px;
 	}
-	.left-container {
-		float: none;
-		margin-top: 0px;
-	}
 	.center-container {
 		width: 100%;
 		margin: 0px;
-		padding: 10px;
+		padding: 0px;
 	}
 }
 
 /* Menu Styles */
-menu {
-	float: right;
-	animation: 0.4s ease-out 0s 1 slideInFromLeft;
-}
 menu ul {
 	list-style: none;
+	width: 100%;
 }
 menu li {
-	height: 25px;
-	width: 230px;
-	margin: 10px 0px;
+	color: #fff;
+	width: 400px;
 	padding: 10px;
-	background-color: #fff;
-	box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.10);
-	transition: box-shadow 0.2s ease-in-out;
+	border-bottom: #fff 2px solid;
+	transition: border-bottom 0.2s ease-in-out;
 }
 menu li:hover {
-	box-shadow: 0 2px 7px rgba(0,0,0,0.3);
-	color: #2088B8;
-}
-menu h2 {
-	font-size: 20px;
-	margin-top: 2px;
-	padding: 0px;
-	color: #606066;
-	transition: color 0.2s;
-}
-menu h2:hover {
-	color: #2088B8;
+	border-bottom: #606066 2px groove;
 }
 menu img {
 	height: 22px;
@@ -132,53 +121,31 @@ menu img {
 	
 /* Banner Styles*/
 .banner {
-	background-position: center;
-	height: 200px;
 	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
-}
-.banner h1 {
-	font-size: 2.1em;
-	margin-right: 50px;
-	text-align:right;
-	line-height: 200px;
-	color: #FFFFFF;
-	text-shadow: rgba(0,0,0,0.4) 0px 0px 8px;
-}
-h1 img {
-	height: 28px;
-	margin-top: 3px;
-	margin-right: 8px;
+	border-bottom: #fff 2px solid;
 }
 @media only screen and (max-width:750px){
 	.banner {
 		height: auto;
 	}
-	.banner img {
+}
+.bannerimg {
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
+	border-bottom: #fff 2px solid;
+}
+@media only screen and (max-width:750px){
+	.bannerimg {
 		width: 100%;
-	}
-	.banner h1 {
-		font-size: 1.5em;
-		width: 100%;
-		margin-right: 0px;
-		text-align: center;
-		line-height: 100px;
 	}
 }
 
+
 /* CSS for the circle templates used across the site */
 .circle-container {
-	animation: 0.8s ease-out 0s 1 slideInFromBottomContainer;
-}
-#main-circle-grid  {
-	width: 900px;
-	list-style: none;
-}
-#main-circle-grid li {
-	display: inline-block;
+	animation: 0.8s ease-out 0s 1 slideInFromLeft;
 }
 .main-circle {
 	animation: 0.7s ease-out 0s 1 slideInFromBottomCircle;
-	background-color: #606066;
 	width: 180px;
 	height: 180px;
 	border-radius: 100%;
@@ -190,43 +157,10 @@ h1 img {
 	border-radius: 0%;
 	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
 }
-.main-circle2 {
-	animation: 0.7s ease-out 0.1s 1 slideInFromBottomCircle;
-	background-color: #7B7676;
-}
-.main-circle3 {
-	animation: 0.8s ease-out 0.1s 1 slideInFromBottomCircle;
-	background-color: #2088B8;
-}
-.main-circle img {
-	float: left;
-	height: 180px;
-	width: 180px;
-	border-radius: 100%;
-	transition: border-radius 0.6s;
-}
-.main-circle img:hover {
-	border-radius: 0%;
-}
-.main-circle-blank {
-	width: 220px;
-	height: 220px;
-}
 @media only screen and (max-width:750px){
-	#main-circle-grid {
-		width: 100%;
-		animation: none;
-	}
-	.main-circle-blank {
-		height: 0px;
-		width: 0px;
-		display: none;
-	}
-	#main-circle-grid li {
-		display: block;
-	}
 	.main-circle {
-		margin: 20px auto;
+		margin-left: 25%;
+		text-align: center;
 	}
 }
 
@@ -252,7 +186,6 @@ h1 img {
 		text-align:center;
 	}
 	.gallery-pic {
-		width: 45%;
 		margin: 5px;
 		box-sizing: border-box;
 	}
@@ -262,7 +195,7 @@ h1 img {
 /*Animation stuff here */
 @keyframes slideInFromLeft {
 	0% {
-		transform: translateX(-5%);
+		width: 50%;
 		opacity: 0;
 	}
 	20% {
@@ -270,7 +203,7 @@ h1 img {
 	}
 	100% {
 		opacity: 1;
-		transform: translateX(0%);
+		width: 100%;
 	}
 }
 @keyframes slideInFromBottomContainer {

@@ -5,21 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style1.css" />
 <style type="text/css">
-.banner {
-	background-image: url(imgs/banner/Beach.jpg);
-}
-.main-circle {
-	float: left;
-}
-h3 {
-	margin-left: 220px;
-}
-@media only screen and (max-width:750px){
-	.main-circle {
-		float: none;
+	#about {
+		width: 400px;
+		margin: 0px auto;
 	}
 	h3 {
-		margin-left: 0px;
+		margin-top: 15px;
+	}
+@media only screen and (max-width:750px){
+	#about {
+		width: 100%;
 	}
 }
 </style>
@@ -28,26 +23,28 @@ h3 {
 
 <body>
 <div class="full-container">
-	<div class="left-container">
-	<menu>
+	<div class="banner bkgcolorblue">
+		<div class="center-container">
+		<menu>
 		<ul>
-			<a href="index.html"><li><h2><img src="imgs/icon-color-small.png" alt="GS-Icon" />Graham Schmuland</h2></li></a>
-			<a href="portfolio.html"><li><h2>Portfolio</h2></li></a>
-			<a href="projects.html"><li><h2>Projects</h2></li></a>
-			<a href="about.html"><li class="current-page"><h2>About</h2></li></a>
-			<a href="contact.html"><li><h2>Contact</h2></li></a>
+			<a href="index.html"><li><h1>Graham Schmuland</h1></li></a>
+			<a href="index.html"><li><h2>Home</h2></li></a>
+			<a href="about.html"><li><h2>About &amp Contact</h2></li></a>
 		</ul>
 	</menu>
-	</div>
-	<div class="center-container">
-		<div class="banner">
-		<h1>About</h1>
 		</div>
-		<article>
-			<div class="main-circle">
-				<img src="imgs/about/Luge3.jpg" />
-			</div>
+	</div>
+	<section class="bkgcolordg">
+	<div class="center-container">
+		<article id="about">
+			<img class="main-circle" src="imgs/about/Luge3.jpg" />
 			<h2>Graham Schmuland</h2>
+			<h1>Contact</h1>
+			<hr />
+			<p>For the sake of privacy and avoiding spam, please contact me through LinkedIn:<br />
+			<a href="https://www.linkedin.com/in/graham-schmuland-34b34443/">Graham Schmuland</a></p>
+			<p>There you can get in touch with me through the website or get my email address to send me a message</p>	
+			<hr />
 			<h3>A bit of history</h3>
 			<p>I was born and lived in Calgary for 22 years. During that time I discover my passion for good design
 			and using the computer to solve intricate problems. Through junior high and high school I picked up tidbits 
@@ -79,6 +76,7 @@ h3 {
 			contributing to a larger goal as a team and company.</p>
 		</article>
 	</div>
+	</section>
 </div>
 </body>
 </html>
