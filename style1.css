@@ -19,12 +19,18 @@ section {
 
 .bkgcolordg {
 	background-color: #606066;
+	background: linear-gradient(#606066, #505055);
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 }
 .bkgcolorlg {
 	background-color: #7B7676;
+	background: linear-gradient(#7B7676, #6a6565);
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 }
 .bkgcolorblue {
 	background-color: #2088B8;
+	background: linear-gradient(#2088B8, #1b739b);
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 }
 
 a {
@@ -88,10 +94,11 @@ menu li {
 	width: 400px;
 	padding: 10px;
 	border-bottom: #fff 2px solid;
-	transition: border-bottom 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out;
 }
 menu li:hover {
-	border-bottom: #606066 2px groove;
+	/*border-bottom: #606066 2px groove;*/
+	box-shadow: rgba(0,0,0,0.3) 0px 5px 5px;
 }
 menu img {
 	height: 22px;
@@ -121,7 +128,6 @@ menu img {
 	
 /* Banner Styles*/
 .banner {
-	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 	border-bottom: #fff 2px solid;
 }
 @media only screen and (max-width:750px){
@@ -151,11 +157,11 @@ menu img {
 	border-radius: 100%;
 	margin: 20px;
 	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
-	transition: border-radius 0.6s, box-shadow 0.2s;
+	transition: border-radius 0.6s, box-shadow 0.2s 0.1s;
 }
 .main-circle:hover {
 	border-radius: 0%;
-	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
+	box-shadow: rgba(0,0,0,0.3) 0px 2px 0px;
 }
 @media only screen and (max-width:750px){
 	.main-circle {
