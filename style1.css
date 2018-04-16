@@ -13,9 +13,6 @@ body {
 	background-repeat:repeat;
 	overflow-y: scroll;
 }
-section {
-	padding: 10px 0px;
-}
 
 .bkgcolordg {
 	background-color: #606066;
@@ -127,22 +124,11 @@ menu img {
 
 	
 /* Banner Styles*/
-.banner {
-	border-bottom: #fff 2px solid;
-}
-@media only screen and (max-width:750px){
-	.banner {
-		height: auto;
-	}
-}
 .bannerimg {
+	width: 100%;
 	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 	border-bottom: #fff 2px solid;
-}
-@media only screen and (max-width:750px){
-	.bannerimg {
-		width: 100%;
-	}
+	margin-bottom: 10px;
 }
 
 
@@ -151,7 +137,7 @@ menu img {
 	animation: 0.8s ease-out 0s 1 slideInFromLeft;
 }
 .main-circle {
-	animation: 0.7s ease-out 0s 1 slideInFromBottomCircle;
+	animation: 0.7s ease-out 0s 1 slideInFromLeft;
 	width: 180px;
 	height: 180px;
 	border-radius: 100%;
@@ -173,7 +159,7 @@ menu img {
 /* Adaptation of the circle templates to form a simple gallery */
 .gallery {
 	animation: 0.8s ease-out 0s 1 slideInFromBottomContainer;
-	clear:both;
+	clear: both;
 }
 .gallery-pic {
 	background-color: #606066;
@@ -183,6 +169,7 @@ menu img {
 	margin: 20px;
 	box-shadow: rgba(0,0,0,0.2) 0px 0px 1px;
 	transition: box-shadow 0.2s;
+	border: #FFFFFF 3px solid;
 }
 .gallery-pic:hover {
 	box-shadow: rgba(0,0,0,0.3) 0px 2px 5px;
@@ -201,15 +188,15 @@ menu img {
 /*Animation stuff here */
 @keyframes slideInFromLeft {
 	0% {
-		width: 50%;
+		transform: translateX(-50%);
 		opacity: 0;
 	}
 	20% {
 		opacity: 0.5;
 	}
 	100% {
+		transform: translateX(0%);
 		opacity: 1;
-		width: 100%;
 	}
 }
 @keyframes slideInFromBottomContainer {
