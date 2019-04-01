@@ -1,51 +1,204 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style1.css" />
 <title>Graham Schmuland</title>
+<link rel="stylesheet" type="text/css" href="styles/style1.css"  />
 </head>
+<script type="text/javascript" >
+function loadVariables () {
+var dot1 = document.getElementById("dot1");
+var dot2 = document.getElementById("dot2");
+var dot3 = document.getElementById("dot3");
+var dot4 = document.getElementById("dot4");
+var dot5 = document.getElementById("dot5");
+var dot6 = document.getElementById("dot6");
+var dot7 = document.getElementById("dot7");
+var logocont = document.getElementById("logoContainer");
+console.log("dots added");
 
-<body>
-<div class="full-container">
-	<div class="banner bkgcolorblue">
-		<div class="center-container">
-		<menu>
-		<ul>
-			<a href="index.html"><li><h1>Graham Schmuland</h1></li></a>
-			<a href="index.html"><li><h2>Home</h2></li></a>
-			<a href="about.html"><li><h2>About &amp Contact</h2></li></a>
-		</ul>
-	</menu>
-		</div>
+if(logocont) {
+	logocont.addEventListener("mouseover", circleCircles,true);
+	logocont.addEventListener("mouseout", resetCircles,true);
+	console.log("listener added");
+	}
+}
+
+function circleCircles() {
+	//target coordinates
+	
+	var dotxInitial = [15,30,15,30,60,45,45];
+	var dotyInitial = [15,15,30,30,15,30,45];
+	
+	var dotxTarget = [22,37.5,18,29,53,57,46];
+	var dotyTarget = [18,20,35,48.5,18,35,48.5];
+	console.log(dotxInitial[0]);
+	
+	function moveDots (timestamp) {
+		if (dot1.getAttribute("cx")<dotxTarget[0]) {
+			dot1.setAttribute("cx",dotxInitial[0]+=0.7);
+			dot1.setAttribute("cy",dotyInitial[0]+=0.3);
+		}
+		if (dot2.getAttribute("cx")<dotxTarget[1]) {
+			dot2.setAttribute("cx","37.5");
+			dot2.setAttribute("cy","10");
+		}
+			dot3.setAttribute("cx","18");
+			dot3.setAttribute("cy","35");
+			dot4.setAttribute("cx","29");
+			dot4.setAttribute("cy","48.5");
+			dot5.setAttribute("cx","53");
+			dot5.setAttribute("cy","18");
+			dot6.setAttribute("cx","57");
+			dot6.setAttribute("cy","35");
+			dot7.setAttribute("cx","46");
+			dot7.setAttribute("cy","48.5");
+
+	console.log(dotxInitial[0]);
+	requestAnimationFrame(moveDots);
+	}
+	requestAnimationFrame(moveDots(timestamp));
+	
+	
+	//spinCircles();
+	console.log("dots changed");
+}
+function spinCircles() {
+	var logocont = document.getElementById("logoContainer");
+	logocont.className.baseVal = "spinningCircle";
+	console.log(logocont.className);
+}
+	
+function resetCircles() {
+	var dotxInitial = [15,30,15,30,60,45,45];
+	var dotyInitial = [15,15,30,30,15,30,45];
+	dot1.setAttribute("cx","15");
+	dot1.setAttribute("cy","15");
+	
+	dot2.setAttribute("cx","30");
+	dot2.setAttribute("cy","15");
+	
+	dot3.setAttribute("cx","15");
+	dot3.setAttribute("cy","30");
+	
+	dot4.setAttribute("cx","30");
+	dot4.setAttribute("cy","30");
+	
+	dot5.setAttribute("cx","60");
+	dot5.setAttribute("cy","15");
+	
+	dot6.setAttribute("cx","45");
+	dot6.setAttribute("cy","30");
+	
+	dot7.setAttribute("cx","45");
+	dot7.setAttribute("cy","45");
+	stopSpinning();
+	console.log("dots reset");
+}
+function stopSpinning () {
+	var logocont = document.getElementById("logoContainer");
+	logocont.className.baseVal = "";
+}
+</script>
+<style>
+#intro {
+	display: flex;
+	justify-content: center;
+	flex-wrap: no-wrap;
+	padding: 4%;
+	color:#FFF;
+	height: auto;
+	border-bottom: #fff 3px solid;
+}
+#intrologo {
+	color: #FFF;
+	flex-shrink: 0;
+	margin: 0px 10px;
+	text-align: center;
+}
+#intrologo svg {
+	float: left;
+}
+#intrologo h1 {
+	width: 100%;
+	padding-left: 75px;
+	text-align: left;
+	line-height: 1.8em;
+}
+#intro p {
+	margin: 0px 10px;
+	font-size: 1.1em;
+}
+@media screen and (max-width: 1000px) {
+	#intro {
+		flex-wrap: wrap;
+	}
+	#intrologo {
+		margin-bottom: 10px;
+	}
+}
+</style>
+
+<body onLoad="loadVariables()">
+
+<header>
+<nav><ul><li><a href="index.html"><svg width="75" height="60" >
+<g id="logoContainer" width="100%" height="100%">
+<rect cx="0" cy="0" width="100%" height="100%" fill="#00000000"/>
+<circle id="dot1" cx="15" cy="15" r="5" fill="white"/>
+<circle id="dot2" cx="30" cy="15" r="5" fill="white"/>
+<circle id="dot3" cx="15" cy="30" r="5" fill="white"/>
+<circle id="dot4" cx="30" cy="30" r="5" fill="white"/>
+<circle id="dot5" cx="60" cy="15" r="5" fill="white"/>
+<circle id="dot6" cx="45" cy="30" r="5" fill="white"/>
+<circle id="dot7" cx="45" cy="45" r="5" fill="white"/>
+<g>
+</svg></a>
+</li><li><a href="portfolio.html">Portfolio</a></li><li><a href="project.html">Projects</a></li><li><a href="aboutme.html">Principles</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+</header>
+
+<div id="intro" class="pagetitle spacecontainer">
+	<div id="intrologo">
+	<svg width="75" height="60" >
+	<g width="100%" height="100%">
+	<rect cx="0" cy="0" width="100%" height="100%" fill="#00000000"/>
+	<circle id="dot1" cx="15" cy="15" r="5" fill="white"/>
+	<circle id="dot2" cx="30" cy="15" r="5" fill="white"/>
+	<circle id="dot3" cx="15" cy="30" r="5" fill="white"/>
+	<circle id="dot4" cx="30" cy="30" r="5" fill="white"/>
+	<circle id="dot5" cx="60" cy="15" r="5" fill="white"/>
+	<circle id="dot6" cx="45" cy="30" r="5" fill="white"/>
+	<circle id="dot7" cx="45" cy="45" r="5" fill="white"/>
+	<g>
+	</svg>
+	<h1>Graham Schmuland</h1>
 	</div>
-	
+	<p>I am currently a computer science student. Right now I have a passion for learning and implementing systems. Combining a variety of tech into one solution.</p>
 	</div>
+
+<div class="maincontainer">
 	
-	<section class="circle-container bkgcolordg">
-		<div class="center-container">
-			<h2>Web and App Development</h2>
-			<a href="portfolio/foresight.html"><img class="main-circle" src="imgs/portfolio/foresight/fs-logo.png" alt="Foresight Logo" /></a>
-			<a href="portfolio/snowtify.html"><img class="main-circle" src="imgs/portfolio/snowtify/snowtify-logo.png" alt="Snowtify Logo" /></a>
-			<a href="portfolio/emp.html"><img class="main-circle" src="imgs/portfolio/emp/thumbnails/emp-website.png" alt="Erik McRitchie Photography Website" /></a>
-		</div>	
-	</section>
-	<section class="circle-container bkgcolorlg">
-		<div class="center-container">
-			<h2>Graphic Design</h2>
-			<a href="portfolio/daft.html"><img class="main-circle" src="imgs/portfolio/daft/daft-logo.png" alt="Daft Logo" /></a>
-			<img class="main-circle" src="imgs/portfolio/mkk/mkk-logo.png" alt="MKK Logo" />
-			<img class="main-circle" src="imgs/portfolio/vh/vh-logo.png" alt="Vibe Hive Logo" />
-		</div>	
-	</section>
-	<section class="circle-container bkgcolordg">
-		<div class="center-container">
-			<h2>Personal Projects</h2>
-			<img class="main-circle" src="imgs/projects/swiped-logo.png" alt="Swipe Logo" />
-		</div>	
-	</section>
+	<section class="showcase spacecontainer">
+        <a><img class="showcase_hero" src="imgs/portfolio/skylineluge/luge-overview.png"/></a>
+    	<a><H2>Skyline Luge Calgary</H2></a>
+    </section>
 	
+    <section class="showcase spacecontainer">
+        <a><img class="showcase_hero" src="imgs/portfolio/emp/emp-overview.png" /></a>
+    	<a><H2>Erik McRitchie Photography</H2></a>
+    </section>
+	
+    <section class="showcase spacecontainer">
+        <a><img class="showcase_hero" src="imgs/portfolio/foresight/foresight-overview.png"/></a>
+    	<a><H2>Foresight</H2></a>
+    </section>
+	
+    <section class="showcase spacecontainer">
+        <a><img class="showcase_hero" src="imgs/portfolio/daft/daft-overview.png" /></a>
+    	<a><H2>Daft YouTube Channel</H2></a>
+    </section>
+	
+    
 </div>
+
 </body>
 </html>
