@@ -11,7 +11,7 @@ body {
 	color: #EEEEEE;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
-header {
+nav {
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
@@ -19,7 +19,7 @@ header {
 	background: linear-gradient(0deg,rgba(0,0,0,80)0%,rgba(0,0,0,40)20%,rgba(0,0,0,0)100%);
 	transition: opacity ease 1s;
 }
-header:hover {
+nav:hover {
 	opacity: 0.9;
 }
 nav ul {
@@ -27,9 +27,10 @@ nav ul {
 	display: flex;
 	flex-flow: row;
 	flex-wrap: nowrap;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 nav ul li {
+	max-width: 300px;
 	flex-grow: 1;
 	font-size: 1.7em;
 	text-align: center;
@@ -43,6 +44,15 @@ nav ul li:hover {
 	color: #EEEEEE;
 	animation: shiftUp cubic-bezier(0.6,0.5,0.1,1.0) 0.6s;
 	animation-fill-mode: both;
+}
+#navlogo {
+	order: 1;
+}
+#navwork {
+	order: 0;
+}
+#navabout {
+	order: 2;
 }
 .current {
 	color: #FF6D00;
@@ -73,23 +83,40 @@ nav ul li:hover {
 }
 /* Medium screens */
 @media screen and (max-width: 1300px) {
-  nav ul li {
-    padding: 20px 0px;
-  }
+  	nav ul li {
+    	padding: 20px 0px;
+  	}
 }
 
 /* Small screens */
 @media screen and (max-width: 1000px) {
-	nav ul {
-		flex-flow: column;
-		transform: translateY(75%);
+	nav {
+		background: #000;
+		border-top: 2px #FFF solid;
+	}
+	.collapse {
+		transform: translateY(110px);
 		transition: transform ease 0.5s;
 	}
-	nav ul:active {
+	.expand {
 		transform: translateY(0%);
+		transition: transform ease 0.5s;
+	}
+	nav ul {
+		flex-flow: column;
 	}
 	nav ul li {
-	  padding: 10px 0px;
+	  	padding: 10px 0px;
+	}
+	
+  	#navlogo {
+		order: 0;
+	}
+	#navwork {
+		order: 1;
+	}
+	#navabout {
+		order: 2;
 	}
 }
 
@@ -104,6 +131,7 @@ nav ul li:hover {
 	}
 }
 .maincontainer {
+	width: 100%;
 	margin: 0px auto 80px auto;
 	display: flex;
 	flex-flow: row;
@@ -113,6 +141,7 @@ nav ul li:hover {
 .spacecontainer {
 	width: 66%;
 	padding: 4%;
+	margin: 0px auto;
 }
 .pagetitle {
 	margin: 0px auto;
