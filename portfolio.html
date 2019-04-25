@@ -126,17 +126,36 @@ function indexCheck () {
 </script>
 
 <style type="text/css" >
-#sel-dev:hover {
+
+.pagetitle ul li {
+	display: inline-block;
+	padding: 10px;
+	font-size: 1.1em;
+	transition: text-shadow ease 0.2s;
+}
+#sel-dev {
 	color: #FF6D00;
 }
-#sel-web:hover {
+#sel-web {
 	color: #2289B9;
 }
-#sel-design:hover {
+#sel-design {
 	color: #4FB848;
 }
-#sel-proto:hover {
+#sel-proto {
 	color: #97479B;
+}
+#sel-dev:hover {
+	text-shadow: #000000cc 0px 0px 4px, #FF6D00aa 0px 0px 10px;
+}
+#sel-web:hover {
+	text-shadow: #000000cc 0px 0px 4px, #2289B9aa 0px 0px 10px;
+}
+#sel-design:hover {
+	text-shadow: #000000cc 0px 0px 4px, #4FB848aa 0px 0px 10px;
+}
+#sel-proto:hover {
+	text-shadow: #000000cc 0px 0px 4px, #97479Bcc 0px 0px 10px;
 }
 
 .portfolioflex {
@@ -220,7 +239,12 @@ function indexCheck () {
 
 <div class="pagetitle spacecontainer">
 	<h1>My Work</h1>
-	<ul><li id="sel-dev">Development</li><li id="sel-web">Web</li><li id="sel-design">Design</li><li id="sel-proto">Prototype</li></ul>
+	<ul>
+		<li id="sel-dev"><a href="#; return false;">Development</a></li>
+		<li id="sel-web"><a href="#; return false;">Web</a></li>
+		<li id="sel-design"><a href="#; return false;">Design</a></li>
+		<li id="sel-proto"><a href="#; return false;">Prototype</a></li>
+	</ul>
 	</div>
 
 <div class="maincontainer">
