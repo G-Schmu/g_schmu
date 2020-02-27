@@ -3,216 +3,161 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Graham Schmuland</title>
 <link rel="shortcut icon" href="logo.ico">
-<link rel="stylesheet" type="text/css" href="styles/style1.css"  />
+<link rel="stylesheet" type="text/css" href="style1.css"  />
 </head>
 <script type="text/javascript" >
-function loadVariables () {
-var dot1 = document.getElementById("dot1");
-var dot2 = document.getElementById("dot2");
-var dot3 = document.getElementById("dot3");
-var dot4 = document.getElementById("dot4");
-var dot5 = document.getElementById("dot5");
-var dot6 = document.getElementById("dot6");
-var dot7 = document.getElementById("dot7");
-var logocont = document.getElementById("logoContainer");
-console.log("dots added");
-
-if(logocont) {
-	logocont.addEventListener("mouseover", circleCircles,true);
-	logocont.addEventListener("mouseout", resetCircles,true);
-	console.log("listener added");
-	}
-}
-
-function circleCircles() {
-	//target coordinates
-	
-	var dotxInitial = [15,30,15,30,60,45,45];
-	var dotyInitial = [15,15,30,30,15,30,45];
-	
-	var dotxTarget = [22,37.5,18,29,53,57,46];
-	var dotyTarget = [18,20,35,48.5,18,35,48.5];
-	console.log(dotxInitial[0]);
-	
-	function moveDots (timestamp) {
-		if (dot1.getAttribute("cx")<dotxTarget[0]) {
-			dot1.setAttribute("cx",dotxInitial[0]+=0.7);
-			dot1.setAttribute("cy",dotyInitial[0]+=0.3);
-		}
-		if (dot2.getAttribute("cx")<dotxTarget[1]) {
-			dot2.setAttribute("cx","37.5");
-			dot2.setAttribute("cy","10");
-		}
-			dot3.setAttribute("cx","18");
-			dot3.setAttribute("cy","35");
-			dot4.setAttribute("cx","29");
-			dot4.setAttribute("cy","48.5");
-			dot5.setAttribute("cx","53");
-			dot5.setAttribute("cy","18");
-			dot6.setAttribute("cx","57");
-			dot6.setAttribute("cy","35");
-			dot7.setAttribute("cx","46");
-			dot7.setAttribute("cy","48.5");
-
-	console.log(dotxInitial[0]);
-	requestAnimationFrame(moveDots);
-	}
-	requestAnimationFrame(moveDots(timestamp));
-	
-	
-	//spinCircles();
-	console.log("dots changed");
-}
-function spinCircles() {
-	var logocont = document.getElementById("logoContainer");
-	logocont.className.baseVal = "spinningCircle";
-	console.log(logocont.className);
-}
-	
-function resetCircles() {
-	var dotxInitial = [15,30,15,30,60,45,45];
-	var dotyInitial = [15,15,30,30,15,30,45];
-	dot1.setAttribute("cx","15");
-	dot1.setAttribute("cy","15");
-	
-	dot2.setAttribute("cx","30");
-	dot2.setAttribute("cy","15");
-	
-	dot3.setAttribute("cx","15");
-	dot3.setAttribute("cy","30");
-	
-	dot4.setAttribute("cx","30");
-	dot4.setAttribute("cy","30");
-	
-	dot5.setAttribute("cx","60");
-	dot5.setAttribute("cy","15");
-	
-	dot6.setAttribute("cx","45");
-	dot6.setAttribute("cy","30");
-	
-	dot7.setAttribute("cx","45");
-	dot7.setAttribute("cy","45");
-	stopSpinning();
-	console.log("dots reset");
-}
-function stopSpinning () {
-	var logocont = document.getElementById("logoContainer");
-	logocont.className.baseVal = "";
-}
-
-function menuTrigger (source) {
-	var width = screen.width;
-	var nav = document.getElementById('mainnav');
-	if (width < 1000) {
-		if (nav.className == "collapse") {
-			nav.className = "expand";
-		}
-		else {
-			nav.className = "collapse";
-		}
-	}
-}
-function indexCheck () {
-	var width = screen.width;
-	var nav = document.getElementById('mainnav');
-	if (width < 1000) {
-		if (nav.className == "expand") {
-			window.location.href = "index.html";
-		}
-	}
-}
-
 </script>
 <style>
+
 #intro {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: no-wrap;
 	padding: 4%;
+	color: #FFFFFF;
 	height: auto;
-	border-bottom: #fff 3px solid;
+	border-bottom: #FFFFFF 3px solid;
+	margin: 0px auto;
 }
 #intrologo {
 	flex-shrink: 0;
-	margin: 0px 10px;
-	text-align: center;
+	margin: 0px auto;
+	text-align: left;
 }
 #intrologo svg {
 	float: left;
 }
 #intrologo h1 {
-	width: 100%;
 	padding-left: 75px;
 	text-align: left;
 	line-height: 60px;
 }
-#intro p {
-	margin: 0px 10px;
-	font-size: 1.1em;
-	text-align: left;
+#intro img {
+	height: 2em;
+	margin: 8px;
+	float: right;
 }
-@media screen and (max-width: 1000px) {
+#intro p {
+	text-align: left;
+	width: 60%;
+	margin: 6px 0px;
+}
+/* Larger than FHD screens */
+@media screen and (min-width: 1921px) {
 	#intro {
-		flex-wrap: wrap;
+		padding: 50px 4%;
 	}
+}
+/* Medium (Tablet) screens and smaller */
+@media screen and (max-width: 1000px) {
 	#intrologo {
 		margin-bottom: 10px;
 	}
+	#intro p {
+		width: 100%;
+	}
+}
+
+.cat_dev {
+	background-color: #2088B8C9;
+}
+.cat_design {
+	background-color: #4FB848C9;
+}
+.cat_proto {
+	background-color: #F16308C9;
+}
+.about {
+	background-color: #373737C9;
+}
+.GitHub-Logo {
+	height: 30px;
+	margin: 5px 0px;
 }
 </style>
 
-<body onLoad="loadVariables()">
-
-<nav id="mainnav" class="collapse"><ul><li id="navlogo" onClick="menuTrigger(); return false;"><a onClick="indexCheck(); return false;" href="#"><svg width="75" height="60" >
-<g id="logoContainer" width="100%" height="100%">
-<rect cx="0" cy="0" width="100%" height="100%" fill="#00000000"/>
-<circle id="dot1" cx="15" cy="15" r="5" fill="white"/>
-<circle id="dot2" cx="30" cy="15" r="5" fill="white"/>
-<circle id="dot3" cx="15" cy="30" r="5" fill="white"/>
-<circle id="dot4" cx="30" cy="30" r="5" fill="white"/>
-<circle id="dot5" cx="60" cy="15" r="5" fill="white"/>
-<circle id="dot6" cx="45" cy="30" r="5" fill="white"/>
-<circle id="dot7" cx="45" cy="45" r="5" fill="white"/>
-<g>
-</svg></a>
-</li><li id="navwork"><a href="portfolio.html">Work</a></li><li id="navabout"><a href="contact.html">About Me</a></li></ul></nav>
+<body>
 
 <div id="intro" class="pagetitle spacecontainer">
 	<div id="intrologo">
-	<svg width="75" height="60" >
+		<svg width="75" height="60" >
 	<g width="100%" height="100%">
 	<rect cx="0" cy="0" width="100%" height="100%" fill="#00000000"/>
-	<circle id="dot1" cx="15" cy="15" r="5" fill="white"/>
-	<circle id="dot2" cx="30" cy="15" r="5" fill="white"/>
-	<circle id="dot3" cx="15" cy="30" r="5" fill="white"/>
-	<circle id="dot4" cx="30" cy="30" r="5" fill="white"/>
-	<circle id="dot5" cx="60" cy="15" r="5" fill="white"/>
-	<circle id="dot6" cx="45" cy="30" r="5" fill="white"/>
-	<circle id="dot7" cx="45" cy="45" r="5" fill="white"/>
+	<circle id="dot1" cx="15" cy="15" r="5" fill="#FFFFFF"/>
+	<circle id="dot2" cx="30" cy="15" r="5" fill="#FFFFFF"/>
+	<circle id="dot3" cx="15" cy="30" r="5" fill="#FFFFFF"/>
+	<circle id="dot4" cx="30" cy="30" r="5" fill="#FFFFFF"/>
+	<circle id="dot5" cx="60" cy="15" r="5" fill="#FFFFFF"/>
+	<circle id="dot6" cx="45" cy="30" r="5" fill="#FFFFFF"/>
+	<circle id="dot7" cx="45" cy="45" r="5" fill="#FFFFFF"/>
 	<g>
 	</svg>
 	<h1>Graham Schmuland</h1>
 	</div>
-	<p>I am a computer science student that loves solving problems by developing systems. The satisfaction of employing multiple technologies towards a common goal. <br/> Technology working in harmony!</p>
-	</div>
+	<p>I am a computer science student that loves solving problems by developing systems. The satisfaction of employing multiple technologies towards a common goal. </p>
+
+	<p><a href="contact.html">Read more about who I am</a></p>
+</div>
 
 <div class="maincontainer spacecontainer">
-	
-	<section class="showcase">
-        <a><img class="showcase_hero" src="imgs/portfolio/skylineluge/Luge-Overview.png"/></a>
-    	<a><H2>Skyline Luge Calgary</H2></a>
-    </section>
-	
-    <section class="showcase">
-        <a><img class="showcase_hero" src="imgs/portfolio/foresight/Foresight-Overview.png"/></a>
-    	<a><H2>Foresight</H2></a>
-    </section>
-	
-    <section class="showcase">
-        <a><img class="showcase_hero" src="imgs/portfolio/emp/EMP-Overview.png" /></a>
-    	<a><H2>Erik McRitchie Photography</H2></a>
-    </section>
-	
+
+		<div class="showcase">
+	        <img class="showcase_logo" src="imgs/portfolio/skylineluge/Luge-Logo.png"/>
+	        <div class="showcase_hero">
+		        <img class="showcase_underview" src="imgs/portfolio/skylineluge/Luge-Overview.png"/>
+		    </div>
+		    <div class="showcase_text">
+		    		<H2>Skyline Luge Calgary</H2>
+		    		<ul class="showcase_categories">
+		    			<li class="cat_dev">App Development</li><li class="cat_design">Graphic Design</li>
+		    		</ul>
+		    		<p>Skyline Luge Calgary has been my place of employment for the last couple of summers. While working there I have been developing an Android app to help in keeping better records of cart maintenance and daily safety checks. The initial execution of this app was a simple Activity implementation using SQLite to store data. Since then I have been working on upgrading it to more Android Jetpack based.</p>
+		    		<p>On top of working on the app, I have done several designs for staff and merchandise apparel. These include and annual staff hoodie and commemorative shirts for Canada's 150th.</p>
+		    		<p>GitHub:<br/><a href="https://github.com/G-Schmu/SkylineLugeCarts" target="_new"><img src="imgs/GitHub-Mark.png" class="github-logo" alt="GitHub"/></a></p>
+		    	</div>
+	    </div>
+
+	    <div class="showcase">
+	        <img class="showcase_logo" src="imgs/portfolio/lemon/Lemon-Logo.png"/>
+	        <div class="showcase_hero">
+		        <img class="showcase_underview" src="imgs/portfolio/lemon/Lemon-Overview.png"/>
+		    </div>
+		    <div class="showcase_text">
+		    	<H2>Lemon - Substance Tracker</H2>
+		    	<ul class="showcase_categories">
+		    		<li class="cat_dev">App Development</li><li class="cat_design">Graphic Design</li>
+		    	</ul>
+		    	<p>Lemon was a school project done as part of a course to look at the process of software development. With my previous experience in Android development I took on more of a project lead role with this app. </p>
+		    	<p>The main focus in developinng this app was Test Driven Development, Version Control, and Continuous Integration. The app idea itself is just a simple substance intake tracker allowing users to keep track of their alcohol and cannabis intake. This was implemented using simple Fragments and Firebase to store the data in the cloud.</p>
+		    	<p>I was also the main provider of the logo, color scheme, and UI design.</p>
+		    	<p>GitHub:<br/><a href="https://github.com/G-Schmu/Lemon" target="_new"><img src="imgs/GitHub-Mark.png" class="github-logo" alt="GitHub"/></a></p>
+		    </div>
+	    </div>
+		
+	    <div class="showcase">
+	        <img class="showcase_logo" src="imgs/portfolio/foresight/Foresight-Logo.png"/>
+	        <div class="showcase_hero">
+		        <img class="showcase_underview" src="imgs/portfolio/foresight/Foresight-Overview.png"/>
+		    </div>
+		    <div class="showcase_text">
+		    	<H2>Foresight Statistics</H2>
+		    	<ul class="showcase_categories">
+		    		<li class="cat_proto">App Prototype</li><li class="cat_design">Graphic Design</li>
+		    	</ul>
+		    	<p>Foresight is a personal project I have been working on. Foresight is a volleyball stat tracker and analysis app to help coaches make statistically based decisions in key moments. As of right now it is primarily just a prototype designed in Adobe XD.</p>
+		    </div>
+	    </div>
+		
+	    <div class="showcase">
+	        <img class="showcase_logo" src="imgs/portfolio/emp/EMP-Logo.png"/>
+	        <div class="showcase_hero">
+		        <img class="showcase_underview" src="imgs/portfolio/emp/EMP-Overview.png"/>
+		    </div>
+		    <div class="showcase_text">
+		    	<H2>Erik McRitchie Photography</H2>
+		    	<ul class="showcase_categories">
+		    		<li class="cat_design">Graphic Design</li><li class="cat_proto">Website Prototype</li>
+		    	</ul>
+		    	<p>This was my first major graphic design project. I was originally employed to create the logo but continued with a prototype website as a personal project. It used JQuery to create dynamic transitions between the feature black and white photos to the selected, related, color photos.</p>
+		    </div>
+	    </div>
     
 </div>
 
