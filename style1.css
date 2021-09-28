@@ -122,6 +122,7 @@ p {
 /* Medium Tablet screens and lower */
 @media all and (max-width: 1300px) {
 	.showcase {
+		border-radius: 20px;
 	}
 	.showcase_logo {
 		border-top-left-radius: 20px;
@@ -132,13 +133,14 @@ p {
 	.showcase_text {
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
+		height: auto;
 		width: 100%;
 		position: relative;
 		opacity: 1;
 	}
 }
 
-/* Small screens */
+/* Small screens if needed */
 @media all and (max-width: 1000px) {
 	
 }
@@ -146,7 +148,6 @@ p {
 
 a {
 	color: inherit;
-	text-decoration: none;
 }
 /* Larger than FHD screens */
 @media screen and (min-width: 1921px) {
